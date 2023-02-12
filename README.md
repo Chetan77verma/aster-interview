@@ -4,6 +4,10 @@
 
 In the project directory, you can run:
 
+### Create `.env` file at root of the project
+
+Take reference from `.env.example` file and add all the environment variables value
+
 ### `npm start`
 
 Runs the app in the development mode.\
