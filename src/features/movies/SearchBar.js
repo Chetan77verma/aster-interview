@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import {ReactComponent as SearchIcon} from '../../../assets/images/serachIcon.svg';
+import {ReactComponent as SearchIcon} from '../../assets/images/serachIcon.svg';
 const SearchBar = ({handleSubmit , searchTerm , setSearchTerm , autoFocus = false}) => {
   const first = useRef(null)
 

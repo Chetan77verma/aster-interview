@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { endPoints } from "../../utils";
+import { endPoints } from "../utils";
 export const moviesSlice = createSlice({
   name: "movies",
   initialState: {
