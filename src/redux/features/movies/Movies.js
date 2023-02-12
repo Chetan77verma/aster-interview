@@ -11,9 +11,6 @@ function Movies() {
 
   const { loading, data: movies, error } = useSelector((state) => state.movies);
 
-  console.log("loading", loading);
-
-  console.log("movies", movies);
   const dispatch = useDispatch();
 
   useEffect(() => {

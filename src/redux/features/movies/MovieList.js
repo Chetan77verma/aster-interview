@@ -3,16 +3,7 @@ import Movie from "./Movie";
 
 const MovieList = ({ movies, loading }) => {
   if (loading) {
-    return (
-      <ul className="movies">
-        {Array.apply(null, Array(5)).map(() => (
-          <li className="load-wraper">
-            <div className="activity"></div>
-          </li>
-        ))}
-        ;
-      </ul>
-    );
+    return <MovieListPlaceHolder />;
   }
   return (
     <ul className="movies">
@@ -24,3 +15,16 @@ const MovieList = ({ movies, loading }) => {
 };
 
 export default MovieList;
+
+const MovieListPlaceHolder = () => {
+  return (
+    <ul className="movies">
+      {Array.apply(null, Array(5)).map((v,i) => (
+        <li key={i} className="load-wraper">
+          <div className="activity"></div>
+        </li>
+      ))}
+      ;
+    </ul>
+  );
+};
