@@ -5,11 +5,13 @@ import { getMoviesAsync, searchMoviesAsync } from "./moviesSlice";
 
 import SearchBar from "./SearchBar";
 import MovieList from "./MovieList";
+import ErrorMessage from "./ErrorMessage";
 
 function Movies() {
   const [searchTerm, setSearchTerm] = useState("");
 
   const { loading, data: movies, error } = useSelector((state) => state.movies);
+
 
   const dispatch = useDispatch();
 
@@ -27,8 +29,6 @@ function Movies() {
     dispatch(searchMoviesAsync({ searchTerm }));
   };
 
-
-
   return (
     <div className="container">
       <p className="search-heading">Search for movies, Series, TV shows</p>
@@ -40,10 +40,16 @@ function Movies() {
           autoFocus
         />
       </div>
-      <h3>
-        Trending Now <i className="arrow-right"></i>
-      </h3>
-      <MovieList loading={loading} movies={movies} />
+      {error ? (
+        <ErrorMessage />
+      ) : (
+        <>
+          <h3>
+            Trending Now <i className="arrow-right"></i>
+          </h3>
+          <MovieList loading={loading} movies={movies} />
+        </>
+      )}
     </div>
   );
 }
